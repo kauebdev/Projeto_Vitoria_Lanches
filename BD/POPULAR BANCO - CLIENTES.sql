@@ -1,0 +1,185 @@
+USE bd_vitoria_lanches;
+
+-- CLIENTES
+INSERT INTO tb_cliente -- 1
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'MARIA APARECIDA',
+    '(11) 93456-7890',
+    'RUA DAS FLORES',
+    '102'
+);
+
+INSERT INTO tb_cliente -- 2
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'JOÃO CARLOS',
+    '(11) 94567-1234',
+    'AVENIDA PAULISTA',
+    '1500'
+);
+
+INSERT INTO tb_cliente -- 3
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'ANA LUIZA',
+    '(11) 95234-9988',
+    'TRAVESSA DO SOL',
+    '15'
+);
+
+INSERT INTO tb_cliente -- 4
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'PEDRO HENRIQUE',
+    '(11) 98765-4321',
+    'RUA SANTO ANTÔNIO',
+    '245'
+);
+
+INSERT INTO tb_cliente -- 5
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'FERNANDA OLIVEIRA',
+    '(11) 99123-4567',
+    'ALAMEDA DAS PALMEIRAS',
+    '78'
+);
+
+INSERT INTO tb_cliente -- 6
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'CARLOS EDUARDO',
+    '(11) 98888-7777',
+    'RUA DAS PEDRAS',
+    '316'
+);
+
+INSERT INTO tb_cliente -- 7
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'BEATRIZ MARTINS',
+    '(11) 97345-1111',
+    'AVENIDA CENTRAL',
+    '500'
+);
+
+INSERT INTO tb_cliente -- 8
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'LUCIANO FREITAS',
+    '(11) 96000-6543',
+    'RUA DOS CRAVOS',
+    '93'
+);
+
+INSERT INTO tb_cliente -- 9
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'CAMILA ROCHA',
+    '(11) 97890-3210',
+    'TRAVESSA VERMELHA',
+    '22'
+);
+
+INSERT INTO tb_cliente -- 10
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'RENATO GOMES',
+    '(11) 99555-8888',
+    'AVENIDA DOS IPÊS',
+    '1234'
+);
+
+INSERT INTO tb_cliente -- 11
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'LARISSA FERREIRA',
+    '(11) 95678-9000',
+    'RUA DO MERCADO',
+    '49'
+);
+
+INSERT INTO tb_cliente -- 12
+(
+    TB_CLIENTE_NOME,
+    TB_CLIENTE_TEL,
+    TB_CLIENTE_ENDEREÇO,
+    TB_CLIENTE_ENDEREÇO_NUM
+)
+VALUES
+(
+    'THIAGO SILVA',
+    '(11) 96222-3333',
+    'RUA DAS JASMINS',
+    '876'
+);
+
+select * from tb_cliente
+
