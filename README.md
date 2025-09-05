@@ -8,9 +8,7 @@
 - ~~definição de atores e R.U'S~~
 - ~~caso de uso~~ - *extends e includes*
 - ~~decidir telas~~
-- requisitos funcionais
-- fazer fluxograma basico
-- diagrama de classes
+- ~~requisitos funcionais~~
 - funcinalidades(prototipo de media fidalidade)
 ### Banco de Dados
 - criar tb_users, tb_funcionarios
