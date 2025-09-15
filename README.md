@@ -8,14 +8,12 @@
 - ~~definição de atores e R.U'S~~
 - ~~caso de uso~~ - *extends e includes*
 - ~~decidir telas~~
-- requisitos funcionais
-- fazer fluxograma basico
-- diagrama de classes
+- ~~requisitos funcionais~~
 - funcinalidades(prototipo de media fidalidade)
 ### Banco de Dados
-- criar tb_users, tb_funcionarios
-- MER para relação entre users e clientes/funcionários
-- criar user admin
+- ~~criar tb_users, tb_funcionarios~~
+- ~~MER para relação entre users e clientes/funcionários~~
+- ~~criar user admin~~
 ### C# 
 - criar tela de login
 - gerenciar telas e permissões
@@ -23,6 +21,7 @@
 - finalizar tela relatório
 - tratamentos gerais
 - modularização final
+- mudar todas as telas com permiss~çoes nos paneis
 ### PHP – Apoio
 - iniciar projeto (organizar pastas, definir tarefas e mais)
 ---
