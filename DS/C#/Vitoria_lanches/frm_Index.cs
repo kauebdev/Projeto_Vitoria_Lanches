@@ -26,6 +26,7 @@ namespace Vitoria_lanches
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string Email = txtEmailUser.Text, password = txtSenhaUser.Text;
+            Tratamentos.LoginExitis(str_con_vitoria_lanches,Email, password);
 
         }
 

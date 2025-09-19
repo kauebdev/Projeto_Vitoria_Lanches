@@ -16,7 +16,7 @@ namespace Vitoria_lanches
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_MainMenu());
+            Application.Run(new frm_index());
         }
     }
 }

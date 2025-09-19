@@ -15,15 +15,16 @@
 - ~~MER para relação entre users e clientes/funcionários~~
 - ~~criar user admin~~
 ### C# 
-- criar tela de login
+- ~~criar tela de login~~
 - gerenciar telas e permissões
-- finalizar tela pedido
+- finalizar tela pedido (refazer ordenqando por tipo de prod igual ecomere)
 - finalizar tela relatório
 - tratamentos gerais
 - modularização final
 - mudar todas as telas com permiss~çoes nos paneis
 ### PHP – Apoio
 - iniciar projeto (organizar pastas, definir tarefas e mais)
+- !!verificar classes!!
 ---
 
 #### Passo a Passo para Montar Requisitos de um Sistema

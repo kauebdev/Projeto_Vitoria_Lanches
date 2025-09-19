@@ -49,31 +49,36 @@ namespace Vitoria_lanches
             }
 
         }
-        public static bool LoginExitis(String str_con, string email)
+        public static void LoginExitis(String str_con, string email, string password)
         {
             MySqlConnection con_vitoria_lanches = new MySqlConnection(str_con);
-            string select_prod_id = @"SELECT TB_USERS_EMAIL FROM TB_USERS 
-                                        WHERE TB_PRODUTO_ID = @TB_PRODUTO_ID;";
-            MySqlCommand cmd_select_prod_id = new MySqlCommand(select_prod_id, con_vitoria_lanches);
+            string select_users_login = @"SELECT * FROM TB_USERS 
+                                       WHERE TB_USERS_EMAIL = @TB_USERS_EMAIL
+                                       and TB_USERS_SENHA = @TB_USERS_SENHA;";
+            MySqlCommand cmd_select_users_login = new MySqlCommand(select_users_login, con_vitoria_lanches);
 
-            cmd_select_prod_id.Parameters.AddWithValue("@TB_PRODUTO_ID", id);
+            cmd_select_users_login.Parameters.AddWithValue("@TB_USERS_EMAIL", email);
+            cmd_select_users_login.Parameters.AddWithValue("@TB_USERS_SENHA", password);
 
             con_vitoria_lanches.Open();
-            cmd_select_prod_id.ExecuteNonQuery();
-            DataTable tb_prod_id = new DataTable();
-            MySqlDataAdapter da_prod_id = new MySqlDataAdapter(cmd_select_prod_id);
-            da_prod_id.Fill(tb_prod_id);
-            con_vitoria_lanches.Close();
+            // leio as infomrações
+            MySqlDataReader reader_users = cmd_select_users_login.ExecuteReader();
 
-            // verifica se tem pelo menos uma linha com aquele id ou seja se existe
-            if (tb_prod_id.Rows.Count > 0)
+            // vejo se retornou algo ou seja 
+            // login existe e esta correto
+            if (reader_users.Read())
             {
-                return true;
+                SessaoUsers.Email = reader_users["TB_USERS_EMAIL"].ToString();
+                SessaoUsers.Password = reader_users["TB_USERS_SENHA"].ToString();
+                SessaoUsers.Type = reader_users["TB_USERS_Tipo"].ToString();
+                MessageBox.Show(SessaoUsers.Email+""+ SessaoUsers.Password+""+ SessaoUsers.Type, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            // login nao existe ou esta incorreto
             else
             {
-                return false;
+                MessageBox.Show("LOGIN OU SENHA INCORRETA", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            con_vitoria_lanches.Close();
 
         }
     }

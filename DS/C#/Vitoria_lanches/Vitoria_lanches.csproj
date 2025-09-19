@@ -159,6 +159,7 @@
       <DependentUpon>Frm_relatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="funcoes.cs" />
+    <Compile Include="InfoTemp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_CadPedido.resx">
