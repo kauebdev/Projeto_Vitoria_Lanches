@@ -7,47 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Vitoria_lanches
 {
-    public partial class frm_Index : Form
+    public partial class frm_index : Form
     {
-        public frm_Index()
+        // str de conexão com o banco de dados
+        string str_con_vitoria_lanches = System.Configuration.ConfigurationManager.ConnectionStrings["vitoria_lanches_conection"].ConnectionString;
+
+        public frm_index()
         {
             InitializeComponent();
-        }         
-
-        // clique boatao pedidos
-        private void btnPedidos_Click(object sender, EventArgs e) {
-           frm_pedidos frm_Pedidos = new frm_pedidos();
-           frm_Pedidos.ShowDialog();
         }
 
-        // clique btn cad produtyo
-        private void btnCadProd_Click(object sender, EventArgs e)
+        // clique login
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            frm_CadProduto frm_Produto = new frm_CadProduto();
-            frm_Produto.ShowDialog();
+            string Email = txtEmailUser.Text, password = txtSenhaUser.Text;
+
         }
 
-        // cliquye botao cad cliente
-        private void btnCadCli_Click(object sender, EventArgs e)
+        // clique cadastrar usuario
+
+        private void btnCadUser_Click(object sender, EventArgs e)
         {
-            frm_CadCliente frm_Cliente = new frm_CadCliente();
-            frm_Cliente.ShowDialog();
-        }
 
-        // clique botao sair
-        private void btnExt_Click(object sender, EventArgs e)
+        }
+        
+        // clique sair
+
+        private void BtnExt_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        //clique botao relatorio
-        private void btnRel_Click(object sender, EventArgs e)
-        {
-            Frm_relatorio frm_relatorio = new Frm_relatorio();
-            frm_relatorio.ShowDialog();
         }
     }
 }

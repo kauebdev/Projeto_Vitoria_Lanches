@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|u:\\projeto_vitoria_lanches\\ds\\c#\\vitoria_lanches\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_index.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_cadpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_cadpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\frm_cadpedido.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\frm_cadpedido.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|U:\\Projeto_Vitoria_Lanches\\DS\\C#\\vitoria_lanches\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1711583A-CBD5-432F-A874-90160A07E2CD}|Vitoria_lanches\\Vitoria_lanches.csproj|solutionrelative:vitoria_lanches\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "funcoes.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\funcoes.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\funcoes.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\funcoes.cs",
+              "RelativeToolTip": "Vitoria_lanches\\funcoes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:46:51.263Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frm_index.cs [Design]",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_index.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_index.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_index.cs [Design]",
+              "RelativeToolTip": "Vitoria_lanches\\frm_index.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T13:32:30.79Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_index.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_index.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_index.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_index.cs",
+              "RelativeToolTip": "Vitoria_lanches\\frm_index.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:44:09.833Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frm_CadCliente.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadCliente.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_CadCliente.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadCliente.cs",
+              "RelativeToolTip": "Vitoria_lanches\\frm_CadCliente.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:47:08.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frm_CadCliente.cs [Design]",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadCliente.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_CadCliente.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadCliente.cs [Design]",
+              "RelativeToolTip": "Vitoria_lanches\\frm_CadCliente.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:47:02.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frm_CadPedido.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadPedido.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_CadPedido.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadPedido.cs",
+              "RelativeToolTip": "Vitoria_lanches\\frm_CadPedido.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAlwHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:06:28.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frm_CadPedido.Designer.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadPedido.Designer.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\frm_CadPedido.Designer.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\frm_CadPedido.Designer.cs",
+              "RelativeToolTip": "Vitoria_lanches\\frm_CadPedido.Designer.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAowHYAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T14:05:34.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\Program.cs",
+              "RelativeDocumentMoniker": "Vitoria_lanches\\Program.cs",
+              "ToolTip": "U:\\Projeto_Vitoria_Lanches\\DS\\C#\\Vitoria_lanches\\Program.cs",
+              "RelativeToolTip": "Vitoria_lanches\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T13:30:59.41Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

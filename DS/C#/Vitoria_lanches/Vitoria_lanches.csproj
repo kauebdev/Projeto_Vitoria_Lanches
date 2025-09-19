@@ -98,11 +98,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_MainPedidos.cs">
+    <Compile Include="frm_CadastroUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MainPedidos.Designer.cs">
-      <DependentUpon>frm_MainPedidos.cs</DependentUpon>
+    <Compile Include="frm_CadastroUsers.Designer.cs">
+      <DependentUpon>frm_CadastroUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_index.Designer.cs">
+      <DependentUpon>frm_index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MenuPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MenuPedidos.Designer.cs">
+      <DependentUpon>frm_MenuPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_CadPedido.cs">
       <SubType>Form</SubType>
@@ -116,11 +128,11 @@
     <Compile Include="frm_AcomPedidos.Designer.cs">
       <DependentUpon>frm_AcomPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Index.cs">
+    <Compile Include="frm_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Index.Designer.cs">
-      <DependentUpon>frm_Index.cs</DependentUpon>
+    <Compile Include="frm_MainMenu.Designer.cs">
+      <DependentUpon>frm_MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_CadProduto.cs">
       <SubType>Form</SubType>
@@ -155,11 +167,14 @@
     <EmbeddedResource Include="frm_AcomPedidos.resx">
       <DependentUpon>frm_AcomPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MainPedidos.resx">
-      <DependentUpon>frm_MainPedidos.cs</DependentUpon>
+    <EmbeddedResource Include="frm_index.resx">
+      <DependentUpon>frm_index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Index.resx">
-      <DependentUpon>frm_Index.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MenuPedidos.resx">
+      <DependentUpon>frm_MenuPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MainMenu.resx">
+      <DependentUpon>frm_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CadProduto.resx">
       <DependentUpon>frm_CadProduto.cs</DependentUpon>

@@ -69,7 +69,7 @@ namespace Vitoria_lanches
                 var cod_prod = int.Parse(txtCod.Text);
                 int cod_tipo_prod = int.Parse(cmbTipo.SelectedValue.ToString()); // pega o id para cadasro com base no nome ja padronizado para evitar erros
                 // ve se o id ja existe
-                if (Tratamentos.idExitis(str_con_vitoria_lanches, cod_prod))
+                if (Tratamentos.idProdExitis(str_con_vitoria_lanches, cod_prod))
                 {
                     MessageBox.Show("PRODUTO JA EXISTE!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -134,7 +134,7 @@ namespace Vitoria_lanches
                 var cod_prod = int.Parse(txtCod.Text);
                 int cod_tipo_prod = int.Parse(cmbTipo.SelectedValue.ToString()); // pega o id para cadasro com base no nome ja padronizado para evitar erros
                 // ve se o id ja existe
-                if (Tratamentos.idExitis(str_con_vitoria_lanches, cod_prod))
+                if (Tratamentos.idProdExitis(str_con_vitoria_lanches, cod_prod))
                 {
 
                     DialogResult Confirm = MessageBox.Show("quer mesmo excluir o item", "CONFIRMAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -184,7 +184,7 @@ namespace Vitoria_lanches
                 int cod_prod = int.Parse(txtCod.Text);
                 int cod_tipo_prod = int.Parse(cmbTipo.SelectedValue.ToString()); // pega o id para cadasro com base no nome ja padronizado para evitar erros
                 // ve se o id ja existe
-                if (Tratamentos.idExitis(str_con_vitoria_lanches, cod_prod))
+                if (Tratamentos.idProdExitis(str_con_vitoria_lanches, cod_prod))
                 {
                     // atualiza os dados
                     string update_prod = @"update TB_PRODUTO

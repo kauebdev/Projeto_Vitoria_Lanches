@@ -107,5 +107,10 @@ namespace Vitoria_lanches
         {
             cmbTipoProd.SelectedIndex = 0;
         }
+
+        private void pnlClie_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
