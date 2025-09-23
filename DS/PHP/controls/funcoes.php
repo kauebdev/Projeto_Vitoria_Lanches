@@ -1,7 +1,7 @@
 <?php
 class bd {
     public static function ConectarBanco() {
-        require_once 'Config.php';
+        require_once '../models/Config.php';
 
         // Criação da conexão
         $conn = new mysqli( connection::$host, connection::$user, connection::$password, connection::$database);
@@ -23,22 +23,21 @@ class Tratamento {
         require_once '../models/dados.php';
 
         $conn = bd::ConectarBanco();
-        $sql = @"SELECT * FROM TB_USERS 
-                WHERE TB_USERS_EMAIL = $email
-                and TB_USERS_SENHA = $senha";
+        $sql = "SELECT * FROM TB_USERS 
+                WHERE TB_USERS_EMAIL = '$email'
+                and TB_USERS_SENHA = '$senha'";
         $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-
-            SessaoUsers::$Email = $row["TB_USERS_EMAIL"];
-            SessaoUsers::$Senha = $row["TB_USERS_SENHA"];
-            SessaoUsers::$Tipo  = $row["TB_USERS_TIPO"];
-        
-            echo 'EMAIL: ' . SessaoUsers::$Email . '<br>';
-            echo 'SENHA: ' . SessaoUsers::$Senha . '<br>';
-            echo 'TIPO: ' . SessaoUsers::$Tipo;
+        // se existir 
+        if ($row) {
+            // inicio imnha sessao
+            session_start();
+            SessaoUsers::set($row["TB_USERS_EMAIL"], $row["TB_USERS_SENHA"], $row["TB_USERS_TIPO"]);
+            header('Location: ../views/MainMenu.php');
+            exit;
         } else {
+            include '../views/index.php';
             echo 'LOGIN OU SENHA INCORRETOS';
         }
 

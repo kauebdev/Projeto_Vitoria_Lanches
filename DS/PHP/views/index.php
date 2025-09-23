@@ -10,9 +10,9 @@
     <body>
         <Center>
             <!-- mudra para post posteriomente -->
-            <form action="./controls/post_index" method="get">
+            <form action="../controls/post_index.php" method="post">
                     Login: <input type="text" name="txtEmail" placeholder="Digite o Email">
-                    Senha: <input type="text" name="txtEmail" placeholder="Digite o Email">
+                    Senha: <input type="text" name="txtSenha" placeholder="Digite o Email">
 
                     <input type="submit" name="btnLogin" value="LOGIN">
                     <input type="submit" name="btnCad" value="CADASTRAR">
