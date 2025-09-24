@@ -16,6 +16,7 @@
 - ~~criar user admin~~
 ### C# 
 - ~~criar tela de login~~
+- tela cadastro~~
 - gerenciar telas e permissões
 - finalizar tela pedido (refazer ordenqando por tipo de prod igual ecomere)
 - finalizar tela relatório
@@ -23,7 +24,17 @@
 - modularização final
 - mudar todas as telas com permiss~çoes nos paneis
 ### PHP – Apoio
-- iniciar projeto (organizar pastas, definir tarefas e mais)
+- ~~tela login~~
+- ~~tela cadastro~~
+- tela mainenu
+- tela menupedidos
+- tela CadPedido
+- tela acomPedidos
+- tela CadProduto
+- tela CadTipoproduto
+- tela Cadcliente
+- tela relatorio
+- anti sql injection
 - !!verificar classes!!
 ---
 
