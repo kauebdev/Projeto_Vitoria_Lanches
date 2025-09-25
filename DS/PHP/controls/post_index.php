@@ -5,12 +5,12 @@ if ($_POST){
     if (isset($_POST['btnLogin'])){
         $email = $_POST['txtEmail'];
         $senha = $_POST['txtSenha'];
-        Tratamento::LoginExists($email,$senha);
+        Querys::Login($email,$senha);
     }
 
     
     if (isset($_POST['btnCad'])){
-        
+        header("Location: ../views/CadUsers.php");
     }
 }
 ?>

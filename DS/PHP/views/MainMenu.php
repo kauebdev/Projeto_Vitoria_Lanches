@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vitoria Lanches</title>
 </head>
+
 <body>
     <center>
+        <div class="Menu">
         <?php
         require_once '../models/dados.php';
         session_start();
-        echo 'EMAIL: ' . SessaoUsers::getEmail() . '<br>';
-        echo 'TIPO: ' . SessaoUsers::getTipo();
-            if (SessaoUsers::getTipo() == 'ADMIN') {
-                echo '<h1>admin</h1>';           
-             } else {
-                    echo '<h1>cliente</h1>';           
-
-                }
-        ?> 
-
-
+        $tipo = SessaoUsers::getTipo();
+        if ($tipo == 'ADMIN') {
+            include '../views/MainMenuAdmin.php';
+        } else {
+            include '../views/MainMenuClie.php';
+        }
+        ?>
+        </div>
     </center>
 </body>
+
 </html>

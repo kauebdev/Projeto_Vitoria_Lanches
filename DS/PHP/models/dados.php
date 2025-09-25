@@ -1,17 +1,29 @@
 <?php
 class SessaoUsers {
     public static function set($email, $senha, $tipo) {
-        $_SESSION['Email'] = $email;
-        $_SESSION['Senha'] = $senha;
-        $_SESSION['Tipo']  = $tipo;
+        $_SESSION['user_email'] = $email;
+        $_SESSION['user_senha'] = $senha;
+        $_SESSION['user_tipo']  = $tipo;
     }
 
     public static function getEmail() {
-        return $_SESSION['Email'] ?? null;
+        return $_SESSION['user_email'] ?? null;
     }
 
     public static function getTipo() {
-        return $_SESSION['Tipo'] ?? null;
+        return $_SESSION['user_tipo'] ?? null;
+    }
+
+}
+
+class NewUsers {
+    public static function setType($tipo) {
+        $_SESSION['newuser_tipo'] = $tipo;
+    }
+
+    public static function getTipo() {
+        return $_SESSION['newuser_tipo'] ?? null;
     }
 }
+
 ?>
