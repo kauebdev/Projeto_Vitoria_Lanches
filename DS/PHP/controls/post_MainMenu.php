@@ -8,5 +8,9 @@ if ($_POST){
         header("location: ../views/CadUsers.php");
         exit;
     }
+    if(isset($_POST['btnPed'])){
+        header("location: ../views/MenuPedidos.php");
+        exit;
+    }
 }
 ?>

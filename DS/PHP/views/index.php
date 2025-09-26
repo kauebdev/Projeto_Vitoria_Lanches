@@ -9,7 +9,7 @@
 <?php
 require_once '../models/dados.php';
 session_start();
-SessaoUsers::set(null,null,'CLIENTE')
+SessaoUsers::set(null,null,'CLIENTE', null)
 ?>
     <body>
         <Center>

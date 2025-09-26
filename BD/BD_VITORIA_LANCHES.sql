@@ -86,6 +86,21 @@ TB_PRODUTO_PEDIDO_VENDA_PREC_TOTAL DECIMAL(10,2) NOT NULL,
 
 );
 
+-- USER DEFAULT
+INSERT INTO tb_users 
+(
+tb_users_id,
+tb_users_email,
+tb_users_senha,
+tb_users_tipo
+) value 
+(
+2,
+"default",
+'default',
+'DEFAULT'
+);
+
 -- USER ADMIN
 INSERT INTO tb_users 
 (
