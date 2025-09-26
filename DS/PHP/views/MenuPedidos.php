@@ -26,11 +26,10 @@
 <?php
 require_once '../controls/funcoes.php';
 $tipos = Querys::tiposProd();
-
+$produtos = [];
+$tipoSelecionado = $_POST['btntipo'] ?? '';
 if (isset($_POST['btntipo'])) {
-    $tipoSelecionado = $_POST['btntipo'] ?? '';
     $produtos = Querys::ProdutosPorTipo($tipoSelecionado) ?? [];
-
 }
 ?>
 
@@ -46,7 +45,7 @@ if (isset($_POST['btntipo'])) {
                 <?php Exibir::exibirTiposProd($tipos) ?>
             </div>
             <div class="produtos">
-                <?php Exibir::exibirProd($produtos, $tipoSelecionado) ?>
+                <?php Exibir::exibirProdporTipo($produtos, $tipoSelecionado) ?>
                 =
             </div>
         </div>

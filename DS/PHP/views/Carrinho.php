@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
 </head>
 <?php
 require_once '../controls/funcoes.php';
-    $produtos = Querys::Produtos();
+$produtos = Querys::Produtos();
 ?>
+
 <body>
     <center>
         <h1>Vitoria Lanches</h1>
@@ -18,22 +20,32 @@ require_once '../controls/funcoes.php';
         require_once '../controls/funcoes.php';
         session_start();
         $idCliente = SessaoUsers::getIdCliente();
+        $tipoCliente = SessaoUsers::getTipo();
         $cliente = Querys::infoSCliente($idCliente);
-        if (!empty($cliente)) {
-            echo "Cliente: <b>" . $cliente['nome'] . "</b><br>";
-            echo "CPF: " . $cliente['cpf'] . "<br>";
-            echo "Fone: " . $cliente['tell'] . "<br>";
-            echo "Endereço: " . $cliente['endereco'] . ", " . $cliente['numero'] . "<br><br>";
+        if ($tipoCliente == 'ADMIN') {
+            $email = SessaoUsers::getEmail();
+            echo "ADMIN: <b>" . $email . "</b><br><br><hr><div>";
+            include 'MenuClieAdminPed.php';
+            echo"</div>";
+            
         } else {
-            echo "Cliente não encontrado!";
+            if (!empty($cliente)) {
+                echo "Cliente: <b>" . $cliente['nome'] . "</b><br>";
+                echo "CPF: " . $cliente['cpf'] . "<br>";
+                echo "Fone: " . $cliente['tell'] . "<br>";
+                echo "Endereço: " . $cliente['endereco'] . ", " . $cliente['numero'] . "<br><br>";
+            } else {
+                echo "Cliente não encontrado!";
+            }
         }
 
 
+
         ?>
-        <for
-        <form action="" method="post">
+        <for <form action="" method="post">
             <?php Exibir::exibirCarrinho($produtos) ?>
-        </form>
+            </form>
     </center>
 </body>
+
 </html>

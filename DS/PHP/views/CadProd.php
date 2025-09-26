@@ -10,6 +10,7 @@
 <?php
 require_once '../controls/funcoes.php';
 $tipos = Querys::tiposProd();
+$produtos = Querys::Produtos();
 ?>
 
 <body>
@@ -21,11 +22,7 @@ $tipos = Querys::tiposProd();
             escolha o tipo:
             <select name="IdTipo">
                 <option value="0">Selecione Tipo</option>
-                <?php foreach ($tipos as $tipo): ?>
-                    <option value="<?= $tipo['TB_TIPO_PRODUTO_ID'] ?>">
-                        <?= htmlspecialchars($tipo['TB_TIPO_PRODUTO_DESC']) ?>
-                    </option>
-                <?php endforeach; ?>
+                <?php Exibir::exibirTiposSelect($tipos)?>
             </select>
             <input type="submit" value="novo" name="btnTipo" formnovalidate><br><br>
             digite o preço Unitario: <input type="number" name="txtPreçoUn" required><br><br>
@@ -35,8 +32,10 @@ $tipos = Querys::tiposProd();
             <input type="submit" value="Cadastrar" name="btnCadProd"> <br><br>
         </form>
         <form action="../controls/post_CadProd.php" method="post">
-            <input type="submit" value="voltar" name="btnVoltar">
+            <input type="submit" value="voltar" name="btnVoltar"><br><br>
         </form>
+        <?php Exibir::exibirProdo($produtos) ?>
+
     </center>
 </body>
 

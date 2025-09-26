@@ -14,7 +14,6 @@
         <?php
         require_once '../models/dados.php';
         require_once '../controls/funcoes.php';
-        session_start();
         $idCliente = SessaoUsers::getIdCliente();
         $cliente = Querys::infoSCliente($idCliente);
         if (!empty($cliente)) {

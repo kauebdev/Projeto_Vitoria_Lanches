@@ -9,6 +9,9 @@ if ($_POST){
         exit;
     }
     if(isset($_POST['btnPed'])){
+        require_once '../models/dados.php';
+        session_start();
+        Carrinho::Clear();
         header("location: ../views/MenuPedidos.php");
         exit;
     }

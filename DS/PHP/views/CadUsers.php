@@ -10,10 +10,6 @@
 require_once '../models/dados.php';
 session_start();
 NewUsers::setType('CLIENTE');
-
-if (SessaoUsers::getTipo() == 'ADMIN'){
-    echo"teste";
-}
 ?>
 
 <body>
@@ -26,9 +22,8 @@ if (SessaoUsers::getTipo() == 'ADMIN'){
             digite seu telefone: <input type="tel" name="txtTel" required><br><br>
             digite seu endereço: <input type="text" name="txtEnd" required>
             N°: <input type="number" name="txtEndNum" required><br><br>
-            !! se for admin nao APARECE ISSO AQUI  EM BAIXO !!<br><br>
-            digite seu email de login: <input type="email" name="txtEmail" required><br><br>
-            digite sua senha: <input type="password" name="txtSenha" required><br><br>
+            digite seu email de login: <input type="email" name="txtEmail" <?php echo (SessaoUsers::getTipo() == 'ADMIN') ? 'readonly placeholder="admin nao pode criar user!"' : 'required'; ?>><br><br>
+            digite sua senha: <input type="password" name="txtSenha" <?php echo (SessaoUsers::getTipo() == 'ADMIN') ? 'readonly placeholder="admin nao pode criar user!"' : 'required'; ?>><br><br>
 
             <input type="submit" value="Confirmar" name="btnCadUser"><br><br>
 

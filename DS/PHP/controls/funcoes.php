@@ -27,6 +27,68 @@ class Tratamentos
 
 class Exibir
 {
+    public static function exibirProdo($Produtos)
+    {
+        echo '<table border="1" cellspacing="0" cellpadding="5">';
+        echo '<tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Ação</th>
+              </tr>';
+        
+        foreach ($Produtos as $produto) {
+            echo '<tr>';
+            echo '<form action="../controls/post_CadProd.php" method="post">';
+            
+            // Nome
+            echo '<td><input type="text" name="txtNome" value="' . 
+                    htmlspecialchars($produto['TB_PRODUTO_NOME']) . 
+                 '" readonly></td>';
+            
+            // Preço
+            echo '<td><input type="text" name="txtPreco" value="' . 
+                    htmlspecialchars($produto['TB_PRODUTO_PREC_UNIT']) . 
+                 '" readonly></td>';
+            
+            // Descrição
+            echo '<td><textarea name="txtDesc" readonly>' . 
+                    htmlspecialchars($produto['TB_PRODUTO_DESC']) . 
+                 '</textarea></td>';
+            
+            // Ações
+            echo '<td>';
+            echo '<input type="hidden" name="txtTipo" value="' . htmlspecialchars($produto['TB_PRODUTO_TIPO_PRODUTO_ID']) . '">';
+            echo '<input type="hidden" name="id" value="' . $produto['TB_PRODUTO_ID'] . '">';
+            echo '<input type="submit" name="btnUpd" value="Atualizar">';
+            echo '<input type="submit" name="btnDelr" value="Delete">';
+
+            echo '</td>';
+            
+            echo '</form>';
+            echo '</tr>';
+        }
+        
+        echo '</table>';
+    }
+
+    public static function exibirClientesSelect($clientes){
+        foreach ($clientes as $cliente) {
+            echo '<option value="' . $cliente['TB_CLIENTE_ID'] . '">'
+                . htmlspecialchars($cliente['TB_CLIENTE_NOME']) . ' ' .htmlspecialchars($cliente['TB_CLIENTE_CPF']).
+            '</option>';
+        }
+    }
+
+    public static function exibirTiposSelect($tipos)
+    {
+        foreach ($tipos as $tipo) {
+            echo '<option value="' . $tipo['TB_TIPO_PRODUTO_ID'] . '">'
+                . htmlspecialchars($tipo['TB_TIPO_PRODUTO_DESC']) .
+            '</option>';
+        }
+    }
+
     public static function exibirTiposProd($tipos)
     {
         foreach ($tipos as $tipo) {
@@ -36,7 +98,7 @@ class Exibir
             echo '</form>';
         }
     }
-    public static function exibirProd($Produtos, $tipo)
+    public static function exibirProdporTipo($Produtos, $tipo)
     {
         echo "<h2>Produtos do tipo: $tipo</h2>";
         foreach ($Produtos as $produto) {
@@ -56,7 +118,6 @@ class Exibir
     public static function exibirCarrinho($Produtos)
     {
         require_once '../models/dados.php';
-        session_start();
         $produtosCar = Carrinho::getProdutos() ?? [];
         foreach ($Produtos as $produto) {
             foreach ($produtosCar as $produtoCar) {
@@ -194,7 +255,6 @@ class Inserts
     public static function CadUsers($email, $senha)
     {
         require_once '../models/dados.php';
-        session_start();
         $tipo = NewUsers::getTipo();
         $id = Querys::IdUsers();
         $conn = bd::ConectarBanco();
@@ -220,10 +280,21 @@ class Inserts
 
 class Querys
 {
+    public static function Clientes(){
+        $conn = bd::ConectarBanco();
+        $sql = " SELECT * FROM TB_CLIENTE";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cliente = $result->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        $conn->close();
+        return $cliente;
+    }
+
     public static function Produtos()
     {
         $conn = bd::ConectarBanco();
-        // Buscar produtos do banco filtrando pelo tipo
         $sql = " SELECT * FROM TB_PRODUTO";
         $stmt = $conn->prepare($sql);
         $stmt->execute();

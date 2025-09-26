@@ -40,6 +40,9 @@ class NewUsers
 
 class Carrinho
 {
+    public static function Clear(){
+        $_SESSION['Produtos'] = [];
+    }
     public static function set($produtos)
     {
         $_SESSION['Produtos'] = $produtos;
