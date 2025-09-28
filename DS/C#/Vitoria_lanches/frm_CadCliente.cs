@@ -38,23 +38,53 @@ namespace Vitoria_lanches
                 MySqlConnection con_vitoria_lanches = new MySqlConnection(str_con_vitoria_lanches);
                 int cod_clie = 0; // complemtar com BD 
                 string nm_clie = txtNome.Text;
+                string cpf_clie = txtCpf.Text;
                 string tel_clie = txtTel.Text;
                 int endNum_clie = int.Parse(txtEndNum.Text);
                 string end_clie = txtEnd.Text;
+                string email_clie = txt_email.Text; 
+                string password_clie = txt_senha.Text;
                 if (Tratamentos.notValido(new string[] { nm_clie, tel_clie, end_clie }))
                 {
                     MessageBox.Show("ATENÇÃO AOS CAMPOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                int idUser = Querys.idUser(str_con_vitoria_lanches); // pega o ultimo id e soma mais 1
+                // cad users primeiro
+                string insert_users = @"INSERT INTO TB_USERS  
+                                    ( TB_USERS_ID,
+                                    TB_USERS_EMAIL,
+                                    TB_USERS_SENHA,
+                                    TB_USERS_TIPO) 
+                                    VALUES 
+                                    (@TB_USERS_ID,
+                                    @TB_USERS_EMAIL,
+                                    @TB_USERS_SENHA,
+                                    @TB_USERS_TIPO)";
 
+                MySqlCommand cmd_insert_users = new MySqlCommand(insert_users, con_vitoria_lanches);
+
+                cmd_insert_users.Parameters.AddWithValue("@TB_USERS_ID", idUser);
+                cmd_insert_users.Parameters.AddWithValue("@TB_USERS_EMAIL", email_clie);
+                cmd_insert_users.Parameters.AddWithValue("@TB_USERS_SENHA", password_clie);
+                cmd_insert_users.Parameters.AddWithValue("@TB_USERS_TIPO", "CLIENTE");
+                con_vitoria_lanches.Open();
+                cmd_insert_users.ExecuteNonQuery(); // executa o comando de inserção
+                con_vitoria_lanches.Close(); // fecha a conexão
+
+                // depois cadastra o cliente
                 // cadastra dados
                 string insert_desc_tipo = @"INSERT INTO TB_CLIENTE  
                                     (TB_CLIENTE_NOME,
+                                    TB_CLIENTE_USERS_ID,
+                                    TB_CLIENTE_CPF,
                                     TB_CLIENTE_TEL,
                                     TB_CLIENTE_ENDEREÇO,
                                     TB_CLIENTE_ENDEREÇO_NUM) 
                                     VALUES 
                                     (@TB_CLIENTE_NOME,
+                                    @TB_CLIENTE_USERS_ID,
+                                    @TB_CLIENTE_CPF,
                                     @TB_CLIENTE_TEL,
                                     @TB_CLIENTE_ENDEREÇO,
                                     @TB_CLIENTE_ENDEREÇO_NUM)";
@@ -62,6 +92,8 @@ namespace Vitoria_lanches
 
                 cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_NOME", nm_clie);
                 cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_TEL", tel_clie);
+                cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_USERS_ID", idUser);
+                cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_CPF", cpf_clie);
                 cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_ENDEREÇO", end_clie);
                 cmd_insert_desc_tipo.Parameters.AddWithValue("@TB_CLIENTE_ENDEREÇO_NUM", endNum_clie);
                 con_vitoria_lanches.Open();

@@ -71,10 +71,21 @@ namespace Vitoria_lanches
                 SessaoUsers.Email = reader_users["TB_USERS_EMAIL"].ToString();
                 SessaoUsers.Password = reader_users["TB_USERS_SENHA"].ToString();
                 SessaoUsers.Type = reader_users["TB_USERS_Tipo"].ToString();
-                MessageBox.Show(SessaoUsers.Email+""+ SessaoUsers.Password+""+ SessaoUsers.Type, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            // login nao existe ou esta incorreto
-            else
+
+                // mudar dps 
+                if (SessaoUsers.Type == "ADMIN")
+                {
+                    frm_MainMenuAdmin frm_MainMenuAdmin = new frm_MainMenuAdmin();
+                    frm_MainMenuAdmin.ShowDialog();
+                } else
+                {
+                    frm_MainMenuClie frm_MainMenuClie = new frm_MainMenuClie();
+                    frm_MainMenuClie.ShowDialog();
+                }
+
+                }
+                // login nao existe ou esta incorreto
+                else
             {
                 MessageBox.Show("LOGIN OU SENHA INCORRETA", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -84,7 +95,24 @@ namespace Vitoria_lanches
     }
     public static class Querys
     {
-
+        public static int idUser(String str_con)
+        {
+            MySqlConnection conn = new MySqlConnection(str_con);
+            int proximoId = 0;
+            string sql = "SELECT TB_USERS_ID FROM TB_USERS";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            conn.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int numeroLinhas = 0;
+            while (reader.Read())
+            {
+                numeroLinhas++;
+            }
+            reader.Close();
+            proximoId = numeroLinhas + 1;
+            conn.Close();
+            return proximoId;
+        }
         public static void DgvTipoProd(String str_con, DataGridView dgv) {
             MySqlConnection con_vitoria_lanches = new MySqlConnection(str_con);
             string select_tipo_prod = "SELECT * FROM TB_TIPO_PRODUTO";

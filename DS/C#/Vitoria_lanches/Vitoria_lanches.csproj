@@ -98,17 +98,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_CadastroUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_CadastroUsers.Designer.cs">
-      <DependentUpon>frm_CadastroUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_index.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_index.Designer.cs">
       <DependentUpon>frm_index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MainMenuClie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MainMenuClie.Designer.cs">
+      <DependentUpon>frm_MainMenuClie.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MenuPedidos.cs">
       <SubType>Form</SubType>
@@ -128,11 +128,11 @@
     <Compile Include="frm_AcomPedidos.Designer.cs">
       <DependentUpon>frm_AcomPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MainMenu.cs">
+    <Compile Include="frm_MainMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MainMenu.Designer.cs">
-      <DependentUpon>frm_MainMenu.cs</DependentUpon>
+    <Compile Include="frm_MainMenuAdmin.Designer.cs">
+      <DependentUpon>frm_MainMenuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_CadProduto.cs">
       <SubType>Form</SubType>
@@ -171,11 +171,14 @@
     <EmbeddedResource Include="frm_index.resx">
       <DependentUpon>frm_index.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MainMenuClie.resx">
+      <DependentUpon>frm_MainMenuClie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPedidos.resx">
       <DependentUpon>frm_MenuPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MainMenu.resx">
-      <DependentUpon>frm_MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MainMenuAdmin.resx">
+      <DependentUpon>frm_MainMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CadProduto.resx">
       <DependentUpon>frm_CadProduto.cs</DependentUpon>
