@@ -49,5 +49,9 @@ namespace Vitoria_lanches
             Frm_relatorio frm_relatorio = new Frm_relatorio();
             frm_relatorio.ShowDialog();
         }
+
+        private void frm_MainMenuClie_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

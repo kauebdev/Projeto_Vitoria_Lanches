@@ -13,6 +13,8 @@ SessaoUsers::set(null,null,'CLIENTE', null)
 ?>
     <body>
         <Center>
+            <img src="../imgs/logo.png" alt="" width="150vw" height="150vh">
+            <h1>VITORIA LANCHES</h1><br>
             <!-- mudra para post posteriomente -->
             <form action="../controls/post_index.php" method="post">
                     Login: <input type="email" name="txtEmail" placeholder="Digite o Email" required>

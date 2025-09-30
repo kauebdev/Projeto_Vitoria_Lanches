@@ -9,6 +9,7 @@
 
 <?php
 require_once '../controls/funcoes.php';
+require_once '../models/dados.php';
 $tipos = Querys::tiposProd();
 $produtos = Querys::Produtos();
 ?>
@@ -21,8 +22,10 @@ $produtos = Querys::Produtos();
             digite o Nome do produto: <input type="text" name="txtNome" required><br><br>
             escolha o tipo:
             <select name="IdTipo">
-                <option value="0">Selecione Tipo</option>
-                <?php Exibir::exibirTiposSelect($tipos)?>
+                <option value="0" <?php echo (Prod::getIdTipo() ? '' : 'selected'); ?>>
+                    Selecione Tipo
+                </option>
+                <?php Exibir::exibirTiposSelect($tipos) ?>
             </select>
             <input type="submit" value="novo" name="btnTipo" formnovalidate><br><br>
             digite o preço Unitario: <input type="number" name="txtPreçoUn" required><br><br>

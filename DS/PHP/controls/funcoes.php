@@ -34,58 +34,56 @@ class Exibir
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Descrição</th>
+                <th>Tipo</th>
                 <th>Ação</th>
               </tr>';
-        
+
         foreach ($Produtos as $produto) {
             echo '<tr>';
             echo '<form action="../controls/post_CadProd.php" method="post">';
-            
-            // Nome
-            echo '<td><input type="text" name="txtNome" value="' . 
-                    htmlspecialchars($produto['TB_PRODUTO_NOME']) . 
-                 '" readonly></td>';
-            
-            // Preço
-            echo '<td><input type="text" name="txtPreco" value="' . 
-                    htmlspecialchars($produto['TB_PRODUTO_PREC_UNIT']) . 
-                 '" readonly></td>';
-            
-            // Descrição
-            echo '<td><textarea name="txtDesc" readonly>' . 
-                    htmlspecialchars($produto['TB_PRODUTO_DESC']) . 
-                 '</textarea></td>';
-            
-            // Ações
+            echo '<td><input type="text" name="txtNome" value="' .
+                htmlspecialchars($produto['TB_PRODUTO_NOME']) .
+                '" readonly></td>';
+            echo '<td><input type="text" name="txtPreçoUn" value="' .
+                htmlspecialchars($produto['TB_PRODUTO_PREC_UNIT']) .
+                '" readonly></td>';
+            echo '<td><textarea name="txtDesc" readonly>' .
+                htmlspecialchars($produto['TB_PRODUTO_DESC']) .
+                '</textarea></td>';
+            echo '<td><input type="text" name="txtTipo"  value="' .
+                htmlspecialchars($produto['TB_TIPO_PRODUTO_DESC']) .
+                '" readonly></td>';
             echo '<td>';
-            echo '<input type="hidden" name="txtTipo" value="' . htmlspecialchars($produto['TB_PRODUTO_TIPO_PRODUTO_ID']) . '">';
+            echo '<input type="hidden" name="IdTipo" value="' . htmlspecialchars($produto['TB_TIPO_PRODUTO_ID']) . '">';
             echo '<input type="hidden" name="id" value="' . $produto['TB_PRODUTO_ID'] . '">';
             echo '<input type="submit" name="btnUpd" value="Atualizar">';
-            echo '<input type="submit" name="btnDelr" value="Delete">';
-
+            echo '<input type="submit" name="btnDel" value="Delete">';
             echo '</td>';
-            
             echo '</form>';
             echo '</tr>';
         }
-        
+
         echo '</table>';
     }
 
-    public static function exibirClientesSelect($clientes){
+    public static function exibirClientesSelect($clientes)
+    {
         foreach ($clientes as $cliente) {
             echo '<option value="' . $cliente['TB_CLIENTE_ID'] . '">'
-                . htmlspecialchars($cliente['TB_CLIENTE_NOME']) . ' ' .htmlspecialchars($cliente['TB_CLIENTE_CPF']).
-            '</option>';
+                . htmlspecialchars($cliente['TB_CLIENTE_NOME']) . ' ' . htmlspecialchars($cliente['TB_CLIENTE_CPF']) .
+                '</option>';
         }
     }
 
     public static function exibirTiposSelect($tipos)
     {
+        $idAtual = Prod::getIdTipo();
+
         foreach ($tipos as $tipo) {
-            echo '<option value="' . $tipo['TB_TIPO_PRODUTO_ID'] . '">'
+            $selected = ($tipo['TB_TIPO_PRODUTO_ID'] == $idAtual) ? 'selected' : '';
+            echo '<option value="' . $tipo['TB_TIPO_PRODUTO_ID'] . '" ' . $selected . '>'
                 . htmlspecialchars($tipo['TB_TIPO_PRODUTO_DESC']) .
-            '</option>';
+                '</option>';
         }
     }
 
@@ -121,18 +119,19 @@ class Exibir
         $produtosCar = Carrinho::getProdutos() ?? [];
         foreach ($Produtos as $produto) {
             foreach ($produtosCar as $produtoCar) {
-           
-            if ($produto['TB_PRODUTO_ID'] == $produtoCar['id']) {
-                echo '<form action="../controls/post_CadPedido.php" method="post">';
-                echo 'Nome: <input type="text" name="txtNome" value="' . htmlspecialchars($produto['TB_PRODUTO_NOME']) . '" readonly><br>';
-                echo 'Preço: <input type="text" name="txtPreco" value="' . htmlspecialchars($produto['TB_PRODUTO_PREC_UNIT']) . '" readonly><br>';
-                echo 'Descrição:<br> <textarea name="txtDesc" readonly>' . htmlspecialchars($produto['TB_PRODUTO_DESC']) . '</textarea><br>';
-                echo '<input type="hidden" name="id" value="' . $produto['TB_PRODUTO_ID'] . '">';
-                echo 'Quantidade: <input type="number" value="' . $produtoCar['Quant'] . '"  name="txtQuant" readonly ><br>';
-                echo '<input type="submit" name="btnExcluir" value="Adicionar ao Carrinho"><br><br>';
-                echo '</form><hr>';
 
-            } }
+                if ($produto['TB_PRODUTO_ID'] == $produtoCar['id']) {
+                    echo '<form action="../controls/post_CadPedido.php" method="post">';
+                    echo 'Nome: <input type="text" name="txtNome" value="' . htmlspecialchars($produto['TB_PRODUTO_NOME']) . '" readonly><br>';
+                    echo 'Preço: <input type="text" name="txtPreco" value="' . htmlspecialchars($produto['TB_PRODUTO_PREC_UNIT']) . '" readonly><br>';
+                    echo 'Descrição:<br> <textarea name="txtDesc" readonly>' . htmlspecialchars($produto['TB_PRODUTO_DESC']) . '</textarea><br>';
+                    echo '<input type="hidden" name="id" value="' . $produto['TB_PRODUTO_ID'] . '">';
+                    echo 'Quantidade: <input type="number" value="' . $produtoCar['Quant'] . '"  name="txtQuant" readonly ><br>';
+                    echo '<input type="submit" name="btnExcluir" value="Adicionar ao Carrinho"><br><br>';
+                    echo '</form><hr>';
+
+                }
+            }
         }
     }
 }
@@ -188,6 +187,24 @@ class Inserts
 
     }
 
+    public static function UpdateProd($nome, $idTipo, $precoUn, $desc, $id)
+    {
+        $conn = bd::ConectarBanco();
+
+        $sql = "UPDATE TB_PRODUTO
+                SET 
+                TB_PRODUTO_NOME = ?,
+                TB_PRODUTO_TIPO_PRODUTO_ID = ?,
+                TB_PRODUTO_PREC_UNIT = ?,
+                TB_PRODUTO_DESC = ?
+                WHERE TB_PRODUTO_ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sidsi", $nome, $idTipo, $precoUn, $desc, $id);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+
+    }
     public static function UpdateClie($nome, $cpf, $tel, $end, $endNum, $idUser)
     {
         $conn = bd::ConectarBanco();
@@ -280,7 +297,8 @@ class Inserts
 
 class Querys
 {
-    public static function Clientes(){
+    public static function Clientes()
+    {
         $conn = bd::ConectarBanco();
         $sql = " SELECT * FROM TB_CLIENTE";
         $stmt = $conn->prepare($sql);
@@ -295,7 +313,16 @@ class Querys
     public static function Produtos()
     {
         $conn = bd::ConectarBanco();
-        $sql = " SELECT * FROM TB_PRODUTO";
+        $sql = " SELECT 
+                    p.TB_PRODUTO_ID,
+                    p.TB_PRODUTO_NOME,
+                    p.TB_PRODUTO_DESC,
+                    p.TB_PRODUTO_PREC_UNIT,
+                    t.TB_TIPO_PRODUTO_DESC,
+                            t.TB_TIPO_PRODUTO_ID
+                    FROM tb_produto p
+                    LEFT JOIN tb_tipo_produto t
+                    ON p.TB_PRODUTO_TIPO_PRODUTO_ID = t.TB_TIPO_PRODUTO_ID";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -480,5 +507,26 @@ class Querys
 
 }
 
+class Updates
+{
+
+}
+
+class Deletes
+{
+    public static function DeleteProd($id)
+    {
+        $conn = bd::ConectarBanco();
+
+        $sql = "DELETE FROM TB_PRODUTO
+                WHERE TB_PRODUTO_ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+
+    }
+}
 
 ?>

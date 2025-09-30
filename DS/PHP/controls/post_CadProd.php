@@ -9,9 +9,9 @@ if ($_POST) {
         require_once 'funcoes.php';
         $nome = $_POST['txtNome'];
         $idTipo = $_POST['IdTipo'];
-        $precoUn= $_POST['txtPreçoUn'];
+        $precoUn = $_POST['txtPreçoUn'];
         $desc = $_POST['txtDesc'];
-        Inserts::CadProd($nome , $idTipo, $precoUn, $desc);
+        Inserts::CadProd($nome, $idTipo, $precoUn, $desc);
         header('Location: ../views/CadProd.php');
         exit;
     }
@@ -22,14 +22,25 @@ if ($_POST) {
         header('Location: ../views/CadProd.php');
         exit;
     }
-    if (isset($_POST['btnVoltar'])) {
-        if (isset($_SERVER['HTTP_REFERER'])) {
-            header("Location: " . $_SERVER['HTTP_REFERER']);
-            exit;
-        } else {
-            header("Location: index.php"); // fallback
-            exit;
-        }
+
+    if (isset($_POST['btnUpd'])) {
+        require_once '../models/dados.php';
+        session_start();
+        $nome = $_POST['txtNome'];
+        $idTipo = $_POST['IdTipo'];
+        $precoUn = $_POST['txtPreçoUn'];
+        $desc = $_POST['txtDesc'];
+        $id = $_POST['id'];
+        Prod::set($id, $nome, $idTipo, $precoUn, $desc);
+        header('Location: ../views/UpProd.php');
+        exit;
+    }
+    if (isset($_POST['btnDel'])) {
+        require_once '../controls/funcoes.php';
+        $id = $_POST['id'];
+        Deletes::DeleteProd( $id);
+        header("Location: ../views/CadProd.php");
+        exit;
     }
 }
 
